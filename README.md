@@ -15,4 +15,5 @@ C'est un projet Web ASP.NET core en MVC, qui a pour but de créer des sondages e
 2. Restaurer les packages nuGet
 3. Créer la bdd et modifier connexion dans appsettings.json
 4. faire les migrations (dotnet ef migrations add nom_migrations -p ../(repo des data/file.csproj)) et faire executer avec dotnet migrations update 
+5. Mise en place du système de Connection/Authentification (dossier Sondage_Projet.Services / Injection dépendance / Fichiers Auth et Controllers / Authentification Cookie)
 ```

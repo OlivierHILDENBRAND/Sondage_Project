@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sondage_Project", "Sondage_Project\Sondage_Project.csproj", "{CE0555C1-81A4-483B-ACBC-3FC2C87B6735}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sondage_Project", "Sondage_Project\Sondage_Project.csproj", "{CE0555C1-81A4-483B-ACBC-3FC2C87B6735}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6} = {7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}
+		{E8D650AD-2CB3-48E5-89B5-84CD28A29830} = {E8D650AD-2CB3-48E5-89B5-84CD28A29830}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sondage_Project.Services", "Sondage_Project.Services\Sondage_Project.Services.csproj", "{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8D650AD-2CB3-48E5-89B5-84CD28A29830} = {E8D650AD-2CB3-48E5-89B5-84CD28A29830}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sondage_Project.Data", "Sondage_Project.Data\Sondage_Project.Data.csproj", "{E8D650AD-2CB3-48E5-89B5-84CD28A29830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,14 @@ Global
 		{CE0555C1-81A4-483B-ACBC-3FC2C87B6735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE0555C1-81A4-483B-ACBC-3FC2C87B6735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE0555C1-81A4-483B-ACBC-3FC2C87B6735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D650AD-2CB3-48E5-89B5-84CD28A29830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D650AD-2CB3-48E5-89B5-84CD28A29830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D650AD-2CB3-48E5-89B5-84CD28A29830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D650AD-2CB3-48E5-89B5-84CD28A29830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

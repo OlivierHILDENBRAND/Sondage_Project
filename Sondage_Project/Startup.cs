@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sondage_Project.Data;
+using Sondage_Project.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,6 @@ namespace Sondage_Project
         {
             var cn = Configuration.GetConnectionString("mainDb");
 
-
             services.AddDbContext<ApplicationDbContext>(
                builder =>
                {
@@ -36,6 +36,8 @@ namespace Sondage_Project
                     builder.EnableSensitiveDataLogging();
 #endif
                 });
+
+            services.AddScoped<ISondageRepository, SondageRepository>();
 
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();

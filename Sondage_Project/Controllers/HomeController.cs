@@ -24,7 +24,7 @@ namespace Sondage_Project.Controllers
             return View();
         }
 
-        [Authorize]
+        //[Authorize]
         public IActionResult Privacy()
         {
             return View();

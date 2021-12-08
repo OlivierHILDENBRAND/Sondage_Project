@@ -30,6 +30,12 @@ namespace Sondage_Project.Data.Migrations
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActivated")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("MultipleAnswer")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Question_1")
                         .IsRequired()
                         .HasMaxLength(5000)

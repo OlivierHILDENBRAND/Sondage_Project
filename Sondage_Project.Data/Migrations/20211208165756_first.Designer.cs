@@ -9,7 +9,7 @@ using Sondage_Project.Data;
 namespace Sondage_Project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211207171534_first")]
+    [Migration("20211208165756_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,12 @@ namespace Sondage_Project.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActivated")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("MultipleAnswer")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Question_1")
                         .IsRequired()

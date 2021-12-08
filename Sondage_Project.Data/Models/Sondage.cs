@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Sondage_Project.Data.Models
 {
@@ -30,6 +31,16 @@ namespace Sondage_Project.Data.Models
 
 
         public string Question_4 { get; set; }
+
+        [Required]
+        [DefaultValue(true)]
+        public bool IsActivated { get; set; }
+
+        
+        [Required]
+        [DefaultValue(false)]
+        public bool MultipleAnswer { get; set; }
+
     }
 
    

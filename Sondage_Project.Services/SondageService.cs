@@ -35,13 +35,29 @@ namespace Sondage_Project.Services
             await _repo.AddAsync(sondage);
         }
 
-        public Task<List<SondagesIndexViewModel>> GetAllAsync()
+        public async Task<List<SondagesIndexViewModel>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var sondages = await _repo.GetAllAsync();
+
+            var enumerable = sondages.Select(item => new SondagesIndexViewModel()
+            {
+                Id = item.Id,
+                Questions = item.Question,
+                Answer_1 = item.Answer_1,
+                Answer_2 = item.Answer_2,
+                Answer_3 = item.Answer_3,
+                Answer_4 = item.Answer_4,
+                Counter_1 = item.Counter_1,
+                Counter_2 = item.Counter_2,
+                Counter_3 = item.Counter_3,
+                Counter_4 = item.Counter_4,
+            });
+
+            return enumerable.ToList();
         }
 
         public Task<UpdateSondagesViewModel> GetAsync(int id)
-        {
+        {   
             throw new NotImplementedException();
         }
     }

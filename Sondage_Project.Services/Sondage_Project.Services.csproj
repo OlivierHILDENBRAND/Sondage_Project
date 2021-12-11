@@ -8,8 +8,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.12" />
   </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Sondage_Project.data\Sondage_Project.Data.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sondage_Project.Data\Sondage_Project.Data.csproj" />
+  </ItemGroup>
 
 </Project>

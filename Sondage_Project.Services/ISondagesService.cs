@@ -1,4 +1,5 @@
-﻿using Sondage_Project.Services.ViewModels;
+﻿using Sondage_Project.Data.Models;
+using Sondage_Project.Services.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Sondage_Project.Services
     {
         Task<List<SondagesIndexViewModel>> GetAllAsync();
         Task CreateSondageAsync(AddSondagesViewModel model);
+        Task<UpdateSondagesViewModel> GetAsync(int id);
     }
 }

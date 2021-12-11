@@ -9,7 +9,7 @@ using Sondage_Project.Data;
 namespace Sondage_Project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211208165756_first")]
+    [Migration("20211211121225_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,12 +44,15 @@ namespace Sondage_Project.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Question_2")
+                        .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Question_3")
+                        .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Question_4")
+                        .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

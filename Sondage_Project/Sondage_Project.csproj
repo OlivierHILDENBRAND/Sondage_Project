@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Sondage_Project.Data\Sondage_Project.Data.csproj" />
+    <ProjectReference Include="..\Sondage_Project.Services\Sondage_Project.Services.csproj" />
   </ItemGroup>
 
 </Project>

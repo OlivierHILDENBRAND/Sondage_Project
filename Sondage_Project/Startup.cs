@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sondage_Project.Data;
 using Sondage_Project.Data.Repositories;
+using Sondage_Project.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace Sondage_Project
 
             services.AddMvc();
 
-            
+            services.AddScoped<ISondagesService, SondageService>();
             services.AddScoped<ISondageRepository, SondageRepository>();
 
             services.AddControllersWithViews()

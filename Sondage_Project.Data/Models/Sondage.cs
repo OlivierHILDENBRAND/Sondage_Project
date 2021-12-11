@@ -16,41 +16,41 @@ namespace Sondage_Project.Data.Models
 
         [Required]
         [StringLength(5000)]
-        public string Descriptif { get; set; }
+        public string Question { get; set; }
 
 
         [Required]
         [StringLength(5000)]
-        public string Question_1 { get; set; }
+        public string Answer_1 { get; set; }
 
 
         [StringLength(5000)]
-        public string Question_2 { get; set; }
+        public string Answer_2 { get; set; }
 
 
         [StringLength(5000)]
-        public string Question_3 { get; set; }
+        public string Answer_3 { get; set; }
 
 
         [StringLength(5000)]
-        public string Question_4 { get; set; }
+        public string Answer_4 { get; set; }
 
 
         [Required]
         [DefaultValue(0)]
-        public int counter_1 { get; set; }
+        public int Counter_1 { get; set; }
 
 
         [DefaultValue(0)]
-        public int counter_2 { get; set; }
+        public int Counter_2 { get; set; }
 
 
         [DefaultValue(0)]
-        public int counter_3 { get; set; }
+        public int Counter_3 { get; set; }
 
 
         [DefaultValue(0)]
-        public int counter_4 { get; set; }
+        public int Counter_4 { get; set; }
 
 
         [DefaultValue(true)]

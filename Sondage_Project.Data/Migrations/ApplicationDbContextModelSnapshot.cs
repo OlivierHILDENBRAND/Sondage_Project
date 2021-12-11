@@ -25,10 +25,34 @@ namespace Sondage_Project.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Descriptif")
+                    b.Property<string>("Answer_1")
                         .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Answer_2")
+                        .HasMaxLength(5000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Answer_3")
+                        .HasMaxLength(5000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Answer_4")
+                        .HasMaxLength(5000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Counter_1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Counter_2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Counter_3")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Counter_4")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsActivated")
                         .HasColumnType("bit");
@@ -36,34 +60,10 @@ namespace Sondage_Project.Data.Migrations
                     b.Property<bool>("MultipleAnswer")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Question_1")
+                    b.Property<string>("Question")
                         .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Question_2")
-                        .HasMaxLength(5000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Question_3")
-                        .HasMaxLength(5000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Question_4")
-                        .HasMaxLength(5000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("counter_1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("counter_2")
-                        .HasColumnType("int");
-
-                    b.Property<int>("counter_3")
-                        .HasColumnType("int");
-
-                    b.Property<int>("counter_4")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

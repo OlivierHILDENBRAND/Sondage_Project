@@ -36,9 +36,23 @@ namespace Sondage_Project.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task DisableAsync(int id)
+        public async Task DisableAsync(int id)
         {
-            throw new NotImplementedException();
+
+            if (id <= 0)
+            {
+                throw new ArgumentException(nameof(id));
+            }
+
+            var entity = new Sondage() { Id = id };
+
+            if(entity != null)
+            {
+                await _context.SaveChangesAsync();
+            }
+
+
+            //throw new NotImplementedException();
         }
 
         public async Task<List<Sondage>> GetAllAsync()

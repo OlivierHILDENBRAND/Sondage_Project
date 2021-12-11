@@ -9,12 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sondage_Project", "Sondage_
 		{E8D650AD-2CB3-48E5-89B5-84CD28A29830} = {E8D650AD-2CB3-48E5-89B5-84CD28A29830}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sondage_Project.Services", "Sondage_Project.Services\Sondage_Project.Services.csproj", "{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sondage_Project.Services", "Sondage_Project.Services\Sondage_Project.Services.csproj", "{7E20F574-CF02-4DEF-A3BD-DC4AD8D9BFA6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E8D650AD-2CB3-48E5-89B5-84CD28A29830} = {E8D650AD-2CB3-48E5-89B5-84CD28A29830}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sondage_Project.Data", "Sondage_Project.Data\Sondage_Project.Data.csproj", "{E8D650AD-2CB3-48E5-89B5-84CD28A29830}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sondage_Project.Data", "Sondage_Project.Data\Sondage_Project.Data.csproj", "{E8D650AD-2CB3-48E5-89B5-84CD28A29830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

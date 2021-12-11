@@ -20,11 +20,37 @@ namespace Sondage_Project.Data.Repositories
             _context = db;
         }
 
-        public Task AddAsync(Sondage sondage)
+        public async Task AddAsync(Sondage sondage)
+        {
+            if(sondage == null)
+            {
+                throw new ArgumentNullException(nameof(sondage));
+            }
+            await _context.AddAsync(sondage);
+            await _context.SaveChangesAsync();
+            //throw new NotImplementedException();
+        }
+
+        public Task AnswerAsync(Sondage sondage)
         {
             throw new NotImplementedException();
         }
 
+        public Task DisableAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<Sondage>> GetAllAsync()
+        {
+            return await _context.Sondages
+                .ToListAsync();
+            //throw new NotImplementedException();
+        }
+
+        public Task<Sondage> GetSondageAsync(int id)
+           => _context.Sondages.FirstOrDefaultAsync(s => s.Id == id);
+            //throw new NotImplementedException();
         
     }
 }

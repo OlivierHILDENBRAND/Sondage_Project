@@ -39,6 +39,7 @@ namespace Sondage_Project
 
             services.AddMvc();
 
+            
             services.AddScoped<ISondageRepository, SondageRepository>();
 
             services.AddControllersWithViews()

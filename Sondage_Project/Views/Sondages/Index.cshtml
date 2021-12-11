@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Sondage_Project.Data.Models.Sondage>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer_4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Counter_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Counter_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Counter_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Counter_4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActivated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MultipleAnswer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer_4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counter_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counter_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counter_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counter_4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActivated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MultipleAnswer)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

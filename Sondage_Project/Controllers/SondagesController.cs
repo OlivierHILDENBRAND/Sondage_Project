@@ -92,6 +92,7 @@ namespace Sondage_Project.Controllers
         // GET: Sondages/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+           
             if (id == null)
             {
                 return NotFound();
@@ -101,6 +102,11 @@ namespace Sondage_Project.Controllers
             if (sondage == null)
             {
                 return NotFound();
+            }
+
+            if (sondage.IsActivated == false)
+            {
+                return RedirectToAction(nameof(Index));
             }
             return View(sondage);
         }
@@ -112,6 +118,11 @@ namespace Sondage_Project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Question,Answer_1,Answer_2,Answer_3,Answer_4,Counter_1,Counter_2,Counter_3,Counter_4,IsActivated,MultipleAnswer")] Sondage sondage)
         {
+            if (sondage.IsActivated == false)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
             if (id != sondage.Id)
             {
                 return NotFound();

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Sondage_Project.Data;
 using Sondage_Project.Data.Models;
@@ -54,8 +51,6 @@ namespace Sondage_Project.Controllers
         }
 
         // POST: Sondages/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Question,Answer_1,Answer_2,Answer_3,Answer_4, IsActivated, MultipleAnswer")] Sondage sondage)
@@ -70,6 +65,7 @@ namespace Sondage_Project.Controllers
              return View(sondage);
         }
 
+        // GET : Manual/Id
         public async Task <IActionResult> Manual(int? id)
         {
 
@@ -87,6 +83,43 @@ namespace Sondage_Project.Controllers
 
 
             return View(sondage);
+        }
+
+        public async Task <IActionResult> DisableLinks(int ?id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var sondage = await _context.Sondages
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (sondage == null)
+            {
+                return NotFound();
+            }
+
+            sondage.IsActivated = false;
+
+            try
+            {
+                _context.Update(sondage);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SondageExists(sondage.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Sondages/Edit/5
@@ -112,8 +145,6 @@ namespace Sondage_Project.Controllers
         }
 
         // POST: Sondages/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Question,Answer_1,Answer_2,Answer_3,Answer_4,Counter_1,Counter_2,Counter_3,Counter_4,IsActivated,MultipleAnswer")] Sondage sondage)

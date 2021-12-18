@@ -10,7 +10,7 @@
     <div class = "container-fluid">
         <div class = "col-xl-4">
             <p>Désactivation du sondage :</p>
-            <button class = "btn btn-danger">Desactiver le sondage</button>
+            <a asp-action="DisableLinks" asp-route-id="@Model.Id">Desactiver le lien</a>
         </div>
         
         @if (@Model.IsActivated)

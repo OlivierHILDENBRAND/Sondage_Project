@@ -106,7 +106,7 @@ namespace Sondage_Project.Controllers
 
             if (sondage.IsActivated == false)
             {
-                return RedirectToAction(nameof(Index));
+                return Redirect("~/");
             }
             return View(sondage);
         }
@@ -120,7 +120,7 @@ namespace Sondage_Project.Controllers
         {
             if (sondage.IsActivated == false)
             {
-                return RedirectToAction(nameof(Index));
+                return Redirect("~/");
             }
 
             if (id != sondage.Id)

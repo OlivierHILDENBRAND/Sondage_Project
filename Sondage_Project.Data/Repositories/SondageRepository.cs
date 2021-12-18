@@ -28,7 +28,6 @@ namespace Sondage_Project.Data.Repositories
             }
             await _context.AddAsync(sondage);
             await _context.SaveChangesAsync();
-            //test branch data;
         }
 
         public Task AnswerAsync(Sondage sondage)
@@ -48,6 +47,7 @@ namespace Sondage_Project.Data.Repositories
 
             if(entity != null)
             {
+                entity.IsActivated = false;
                 await _context.SaveChangesAsync();
             }
 

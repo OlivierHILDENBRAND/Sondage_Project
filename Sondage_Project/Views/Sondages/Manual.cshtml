@@ -12,10 +12,15 @@
             <p>Désactivation du sondage :</p>
             <button class = "btn btn-danger">Desactiver le sondage</button>
         </div>
-        <div class = "col-xl-4">
+        
+        @if (@Model.IsActivated)
+        {
+            <div class = "col-xl-4">
             <p>Accéder a la page de vote du sondage : </p>
-            <a asp-action="Edit" asp-route-id="@Model.Id">Details</a>
-        </div>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            </div>
+        }
+            
         <div class = "col-xl-4">
             <p>Accéder au résultats du sondage : </p>
             <a asp-action="Details" asp-route-id="@Model.Id">Details</a>

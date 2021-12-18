@@ -1,0 +1,24 @@
+﻿@model Sondage_Project.Data.Models.Sondage
+
+@{
+    ViewData["Title"] = "Manual";
+}
+
+<h1>Manual</h1>
+
+<div class ="row">
+    <div class = "container-fluid">
+        <div class = "col-xl-4">
+            <p>Désactivation du sondage :</p>
+            <button class = "btn btn-danger">Desactiver le sondage</button>
+        </div>
+        <div class = "col-xl-4">
+            <p>Accéder a la page de vote du sondage : </p>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Details</a>
+        </div>
+        <div class = "col-xl-4">
+            <p>Accéder au résultats du sondage : </p>
+            <a asp-action="Details" asp-route-id="@Model.Id">Details</a>
+        </div>
+    </div>
+</div>

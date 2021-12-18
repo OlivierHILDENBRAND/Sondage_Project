@@ -49,6 +49,7 @@ namespace Sondage_Project.Controllers
         // GET: Sondages/Create
         public IActionResult Create()
         {
+
             return View();
         }
 
@@ -63,8 +64,28 @@ namespace Sondage_Project.Controllers
             {
                 _context.Add(sondage);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var id = sondage.Id;
+                return RedirectToAction(nameof(Manual), new {id});
             }
+             return View(sondage);
+        }
+
+        public async Task <IActionResult> Manual(int? id)
+        {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var sondage = await _context.Sondages
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (sondage == null)
+            {
+                return NotFound();
+            }
+
+
             return View(sondage);
         }
 

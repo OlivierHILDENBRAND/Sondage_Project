@@ -53,6 +53,22 @@ namespace Sondage_Project.Data.Models
         public int Counter_4 { get; set; }
 
 
+        [DefaultValue(false)]
+        public bool box_1 { get; set; }
+
+
+        [DefaultValue(false)]
+        public bool box_2 { get; set; }
+
+
+        [DefaultValue(false)]
+        public bool box_3 { get; set; }
+
+
+        [DefaultValue(false)]
+        public bool box_4 { get; set; }
+
+
         [DefaultValue(true)]
         public bool IsActivated { get; set; }
 

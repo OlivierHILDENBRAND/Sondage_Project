@@ -5,6 +5,7 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sondage_Project.Data.Models
 {
@@ -13,7 +14,7 @@ namespace Sondage_Project.Data.Models
         [Key]
         public int Id { get; set; }
 
-
+        
         [Required]
         [StringLength(5000)]
         public string Question { get; set; }
@@ -52,23 +53,7 @@ namespace Sondage_Project.Data.Models
         [DefaultValue(0)]
         public int Counter_4 { get; set; }
 
-
-        [DefaultValue(false)]
-        public bool box_1 { get; set; }
-
-
-        [DefaultValue(false)]
-        public bool box_2 { get; set; }
-
-
-        [DefaultValue(false)]
-        public bool box_3 { get; set; }
-
-
-        [DefaultValue(false)]
-        public bool box_4 { get; set; }
-
-
+        
         [DefaultValue(true)]
         public bool IsActivated { get; set; }
 

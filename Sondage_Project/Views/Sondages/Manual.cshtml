@@ -9,6 +9,7 @@
 <div class ="row">
     <div class = "container-fluid">
         <div class = "col-xl-4">
+            <p>ATTENTION : ce lien des à conserver précieusement. Si vous quitter cette page vous n'aurez pas la possibilité d'y revenir.</p>
             <p>Désactivation du sondage :</p>
             <a asp-action="DisableLinks" asp-route-id="@Model.Id">Desactiver le lien</a>
         </div>
@@ -16,14 +17,15 @@
         @if (@Model.IsActivated)
         {
             <div class = "col-xl-4">
-            <p>Accéder a la page de vote du sondage : </p>
-            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            <p>Pour que les gens accèdent le plus facilement possible au sondage, il est conseillé de partager ce lien par mail.</p>
+            <p>Accéder a la page de vote : </p>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Vote</a>
             </div>
         }
             
         <div class = "col-xl-4">
-            <p>Accéder au résultats du sondage : </p>
-            <a asp-action="Details" asp-route-id="@Model.Id">Details</a>
+            <p>Cliquer sur ce lien pour accéder au résultats du sondage : </p>
+            <a asp-action="Details" asp-route-id="@Model.Id">Résultat</a>
         </div>
     </div>
 </div>

@@ -123,7 +123,7 @@ namespace Sondage_Project.Controllers
         }
 
         // GET: Sondages/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Answer(int? id)
         {
            
             if (id == null)
@@ -147,7 +147,7 @@ namespace Sondage_Project.Controllers
         // POST: Sondages/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Question,Answer_1,Answer_2,Answer_3,Answer_4,Counter_1,Counter_2,Counter_3,Counter_4,IsActivated,MultipleAnswer")] Sondage sondage)
+        public async Task<IActionResult> Answer(int id, [Bind("Id,Question,Answer_1,Answer_2,Answer_3,Answer_4,Counter_1,Counter_2,Counter_3,Counter_4,IsActivated,MultipleAnswer")] Sondage sondage)
         {
             if (sondage.IsActivated == false)
             {

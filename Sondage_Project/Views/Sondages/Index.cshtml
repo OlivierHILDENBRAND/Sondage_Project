@@ -28,10 +28,10 @@
             <td>
                 @if (item.IsActivated)
                 {
-                    <a asp-action="Answer" asp-route-id="@item.Id">Répondre</a>
+                    <a asp-action="Answer" asp-route-id="@item.Id">Vote</a>
                 }
                 <a asp-action="Details" asp-route-id="@item.Id">Résultats</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Cloture</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Supression</a>
             </td>
         </tr>
 }

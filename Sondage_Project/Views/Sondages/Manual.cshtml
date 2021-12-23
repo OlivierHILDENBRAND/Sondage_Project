@@ -9,9 +9,11 @@
 <div class ="row">
     <div class = "container-fluid">
         <div class = "col-xl-4">
-            <p>ATTENTION : ce lien des à conserver précieusement. Si vous quitter cette page vous n'aurez pas la possibilité d'y revenir.</p>
-            <p>Désactivation du sondage :</p>
-            <a asp-action="DisableLinks" asp-route-id="@Model.Id">Desactiver le lien</a>
+            <p>ATTENTION : ce lien est à conserver précieusement. Si vous quitter cette page, vous ny aurez plus accès par la suite. <br />
+                Cliquer sur ce lien va entrainer la cloture du sondage. Il sera donc impossible d'y participer par la suite.<br />
+                </p>
+            <p>Cloture du sondage :</p>
+            <a asp-action="DisableLinks" asp-route-id="@Model.Id">Cloture</a>
         </div>
         
         @if (@Model.IsActivated)

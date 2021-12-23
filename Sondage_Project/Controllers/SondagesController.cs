@@ -14,6 +14,8 @@ namespace Sondage_Project.Controllers
     {
         private readonly ApplicationDbContext _context;
 
+
+
         public SondagesController(ApplicationDbContext context)
         {
             _context = context;
@@ -179,6 +181,8 @@ namespace Sondage_Project.Controllers
                         throw;
                     }
                 }
+
+                
                 return RedirectToAction(nameof(Index));
             }
             return View(sondage);
@@ -208,7 +212,10 @@ namespace Sondage_Project.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var sondage = await _context.Sondages.FindAsync(id);
-            _context.Sondages.Remove(sondage);
+
+            sondage.IsActivated = false;
+
+            //_context.Sondages.Remove(sondage);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

@@ -122,10 +122,10 @@ namespace Sondage_Project.Controllers
 
         }
 
-        // GET: Sondages/Edit/5
+        // GET: Sondages/Answer/5
         public async Task<IActionResult> Answer(int? id)
         {
-           
+
             if (id == null)
             {
                 return NotFound();
@@ -144,7 +144,7 @@ namespace Sondage_Project.Controllers
             return View(sondage);
         }
 
-        // POST: Sondages/Edit/5
+        // POST: Sondages/Answer/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Answer(int id, [Bind("Id,Question,Answer_1,Answer_2,Answer_3,Answer_4,Counter_1,Counter_2,Counter_3,Counter_4,IsActivated,MultipleAnswer")] Sondage sondage)
@@ -158,6 +158,8 @@ namespace Sondage_Project.Controllers
             {
                 return NotFound();
             }
+
+            sondage.Counter_1 = sondage.Counter_1 + 10;
 
             if (ModelState.IsValid)
             {

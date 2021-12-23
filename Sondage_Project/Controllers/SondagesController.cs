@@ -161,8 +161,6 @@ namespace Sondage_Project.Controllers
                 return NotFound();
             }
 
-            sondage.Counter_1 = sondage.Counter_1 + 10;
-
             if (ModelState.IsValid)
             {
                 try
@@ -213,9 +211,8 @@ namespace Sondage_Project.Controllers
         {
             var sondage = await _context.Sondages.FindAsync(id);
 
-            sondage.IsActivated = false;
+            _context.Sondages.Remove(sondage);
 
-            //_context.Sondages.Remove(sondage);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

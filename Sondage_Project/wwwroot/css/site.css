@@ -52,8 +52,7 @@ a {
   border-color: #1861ac;
 }
 
-.form-group-question
-{
+.answer-block {
     display: inline-block;
 }
 /* Sticky footer styles

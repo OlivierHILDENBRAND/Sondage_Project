@@ -43,7 +43,7 @@ namespace Sondage_Project.Data.Repositories
                 throw new ArgumentException(nameof(id));
             }
 
-            var entity = new Sondage() { Id = id };
+            var entity = new Sondage() { SondageId = id };
 
             if(entity != null)
             {
@@ -63,7 +63,7 @@ namespace Sondage_Project.Data.Repositories
         }
 
         public Task<Sondage> GetSondageAsync(int id)
-           => _context.Sondages.FirstOrDefaultAsync(s => s.Id == id);
+           => _context.Sondages.FirstOrDefaultAsync(s => s.SondageId == id);
             //throw new NotImplementedException();
         
     }

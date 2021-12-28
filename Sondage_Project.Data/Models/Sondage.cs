@@ -12,7 +12,7 @@ namespace Sondage_Project.Data.Models
     public class Sondage
     {
         [Key]
-        public int Id { get; set; }
+        public int SondageId { get; set; }
 
         
         [Required]
@@ -60,6 +60,8 @@ namespace Sondage_Project.Data.Models
 
         [DefaultValue(false)]
         public bool MultipleAnswer { get; set; }
+
+  
 
     }
 

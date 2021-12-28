@@ -41,7 +41,7 @@ namespace Sondage_Project.Services
 
             var enumerable = sondages.Select(item => new SondagesIndexViewModel()
             {
-                Id = item.Id,
+                SondageId = item.SondageId,
                 Questions = item.Question,
                 Answer_1 = item.Answer_1,
                 Answer_2 = item.Answer_2,

@@ -2,7 +2,7 @@
 {
     public class SondagesIndexViewModel
     {
-        public int Id { get; set; }
+        public int SondageId { get; set; }
         public string Questions { get; set; }
 
         public string Answer_1 { get; set; }

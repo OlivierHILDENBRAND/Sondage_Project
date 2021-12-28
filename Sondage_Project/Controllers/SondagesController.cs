@@ -36,7 +36,7 @@ namespace Sondage_Project.Controllers
             }
 
             var sondage = await _context.Sondages
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.SondageId == id);
             if (sondage == null)
             {
                 return NotFound();
@@ -61,7 +61,7 @@ namespace Sondage_Project.Controllers
             {
                 _context.Add(sondage);
                 await _context.SaveChangesAsync();
-                var id = sondage.Id;
+                var id = sondage.SondageId;
                 return RedirectToAction(nameof(Manual), new {id});
             }
              return View(sondage);
@@ -77,7 +77,7 @@ namespace Sondage_Project.Controllers
             }
 
             var sondage = await _context.Sondages
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.SondageId == id);
             if (sondage == null)
             {
                 return NotFound();
@@ -95,7 +95,7 @@ namespace Sondage_Project.Controllers
             }
 
             var sondage = await _context.Sondages
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.SondageId == id);
             if (sondage == null)
             {
                 return NotFound();
@@ -110,7 +110,7 @@ namespace Sondage_Project.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SondageExists(sondage.Id))
+                if (!SondageExists(sondage.SondageId))
                 {
                     return NotFound();
                 }
@@ -156,7 +156,7 @@ namespace Sondage_Project.Controllers
                 return Redirect("~/");
             }
 
-            if (id != sondage.Id)
+            if (id != sondage.SondageId)
             {
                 return NotFound();
             }
@@ -170,7 +170,7 @@ namespace Sondage_Project.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SondageExists(sondage.Id))
+                    if (!SondageExists(sondage.SondageId))
                     {
                         return NotFound();
                     }
@@ -195,7 +195,7 @@ namespace Sondage_Project.Controllers
             }
 
             var sondage = await _context.Sondages
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.SondageId == id);
             if (sondage == null)
             {
                 return NotFound();
@@ -219,7 +219,7 @@ namespace Sondage_Project.Controllers
 
         private bool SondageExists(int id)
         {
-            return _context.Sondages.Any(e => e.Id == id);
+            return _context.Sondages.Any(e => e.SondageId == id);
         }
     }
 }

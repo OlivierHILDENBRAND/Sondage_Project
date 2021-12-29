@@ -149,7 +149,7 @@ namespace Sondage_Project.Controllers
         // POST: Sondages/Answer/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Answer(int id, [Bind("SondageId,Question,Answer_1,Answer_2,Answer_3,Answer_4,Counter_1,Counter_2,Counter_3,Counter_4,IsActivated,MultipleAnswer")] Sondage sondage)
+        public async Task<IActionResult> Answer(int id, [Bind("SondageId, Question, Answer_1, Answer_2, Answer_3, Answer_4, Counter_1, Counter_2, Counter_3, Counter_4, IsActivated, answer1check")] Sondage sondage, bool answer1check)
         {
             if (sondage.IsActivated == false)
             {
@@ -161,6 +161,7 @@ namespace Sondage_Project.Controllers
                 return NotFound();
             }
 
+            
             if (ModelState.IsValid)
             {
                 try

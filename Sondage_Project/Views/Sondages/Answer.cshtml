@@ -26,20 +26,25 @@
             <div class="form-group">
                 <p>@Model.Question</p>
             </div>
-            <div class="answer-block">
+            <div class="answer-block" >
                 <div class="form-group-question">
                     <p>@Model.Answer_1</p>
+                    <input asp-for="answer1check" type="checkbox" name="answer1check" />
                 </div>
                 <div class="form-group-question">
                     <p>@Model.Answer_2</p>
+                    <input asp-for="answer2check" type="checkbox" name="answer2check" />
                 </div>
                 <div class="form-group-question">
                     <p>@Model.Answer_3</p>
+                    <input asp-for="answer3check" type="checkbox" name="answer3check" />
                 </div>
                 <div class="form-group-question">
                     <p>@Model.Answer_4</p>
+                    <input asp-for="answer4check" type="checkbox" name="answer4check" />
                 </div>
-            <div class="form-group">
+            </div>
+                <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

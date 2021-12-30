@@ -149,7 +149,7 @@ namespace Sondage_Project.Controllers
         // POST: Sondages/Answer/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Answer(int id, [Bind("SondageId, Question, Answer_1, Answer_2, Answer_3, Answer_4, Counter_1, Counter_2, Counter_3, Counter_4, IsActivated")] Sondage sondage)
+        public async Task<IActionResult> Answer(int id, [Bind("SondageId, Question, Answer_1, Answer_2, Answer_3, Answer_4, answer1check, answer2check, answer3check, answer4check, Counter_1, Counter_2, Counter_3, Counter_4, IsActivated")] Sondage sondage)
         {
             if (sondage.IsActivated == false)
             {
@@ -161,7 +161,25 @@ namespace Sondage_Project.Controllers
                 return NotFound();
             }
 
-            sondage.Counter_1 = sondage.Counter_1 + 1;
+            if (sondage.answer1check)
+            {
+                sondage.Counter_1 = sondage.Counter_1 + 1;
+            }
+
+            if (sondage.answer2check)
+            {
+                sondage.Counter_2 = sondage.Counter_2 + 1;
+            }
+
+            if (sondage.answer3check)
+            {
+                sondage.Counter_3 = sondage.Counter_3 + 1;
+            }
+
+            if (sondage.answer4check)
+            {
+                sondage.Counter_4 = sondage.Counter_4 + 1;
+            }
 
             if (ModelState.IsValid)
             {

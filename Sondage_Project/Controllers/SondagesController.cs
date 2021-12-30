@@ -134,6 +134,12 @@ namespace Sondage_Project.Controllers
             }
 
             var sondage = await _context.Sondages.FindAsync(id);
+
+            sondage.answer1check = false;
+            sondage.answer2check = false;
+            sondage.answer3check = false;
+            sondage.answer4check = false;
+
             if (sondage == null)
             {
                 return NotFound();
@@ -187,6 +193,7 @@ namespace Sondage_Project.Controllers
                 {
                     _context.Update(sondage);
                     await _context.SaveChangesAsync();
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {

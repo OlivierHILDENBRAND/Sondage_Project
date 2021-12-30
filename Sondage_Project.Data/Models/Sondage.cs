@@ -13,7 +13,7 @@ namespace Sondage_Project.Data.Models
     {
         [Key]
         public int SondageId { get; set; }
-
+        
         
         [Required]
         [StringLength(5000)]
@@ -36,7 +36,6 @@ namespace Sondage_Project.Data.Models
         [StringLength(5000)]
         public string Answer_4 { get; set; }
 
-
         [Required]
         [DefaultValue(0)]
         public int Counter_1 { get; set; }
@@ -53,6 +52,19 @@ namespace Sondage_Project.Data.Models
         [DefaultValue(0)]
         public int Counter_4 { get; set; }
 
+
+        [DefaultValue(false)]
+        public bool answer1check { get; set; }
+
+        [DefaultValue(false)]
+        public bool answer2check { get; set; }
+
+        [DefaultValue(false)]
+        public bool answer3check { get; set; }
+
+        [DefaultValue(false)]
+        public bool answer4check { get; set; }
+
         
         [DefaultValue(true)]
         public bool IsActivated { get; set; }
@@ -60,8 +72,6 @@ namespace Sondage_Project.Data.Models
 
         [DefaultValue(false)]
         public bool MultipleAnswer { get; set; }
-
-  
 
     }
 

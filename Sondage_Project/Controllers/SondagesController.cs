@@ -161,6 +161,8 @@ namespace Sondage_Project.Controllers
                 return NotFound();
             }
 
+            sondage.Counter_1 = sondage.Counter_1 + 1;
+
             if (ModelState.IsValid)
             {
                 try

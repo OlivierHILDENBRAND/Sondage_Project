@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -155,7 +156,7 @@ namespace Sondage_Project.Controllers
         // POST: Sondages/Answer/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Answer(int id, [Bind("SondageId, Question, Answer_1, Answer_2, Answer_3, Answer_4, answer1check, answer2check, answer3check, answer4check, Counter_1, Counter_2, Counter_3, Counter_4, IsActivated")] Sondage sondage)
+        public async Task<IActionResult> Answer(int id, [Bind("SondageId, Question, Answer_1, Answer_2, Answer_3, Answer_4, answer1check, answer2check, answer3check, answer4check, Counter_1, Counter_2, Counter_3, Counter_4, IsActivated, MultipleAnswer")] Sondage sondage)
         {
             if (sondage.IsActivated == false)
             {
@@ -167,24 +168,57 @@ namespace Sondage_Project.Controllers
                 return NotFound();
             }
 
-            if (sondage.answer1check)
+            if (sondage.MultipleAnswer)
             {
-                sondage.Counter_1 = sondage.Counter_1 + 1;
+                if (sondage.answer1check)
+                {
+                    sondage.Counter_1 = sondage.Counter_1 + 1;
+                }
+
+                if (sondage.answer2check)
+                {
+                    sondage.Counter_2 = sondage.Counter_2 + 1;
+                }
+
+                if (sondage.answer3check)
+                {
+                    sondage.Counter_3 = sondage.Counter_3 + 1;
+                }
+
+                if (sondage.answer4check)
+                {
+                    sondage.Counter_4 = sondage.Counter_4 + 1;
+                }
             }
 
-            if (sondage.answer2check)
+            if (!sondage.MultipleAnswer)
             {
-                sondage.Counter_2 = sondage.Counter_2 + 1;
-            }
+                if (sondage.answer1check && sondage.answer2check || sondage.answer3check && sondage.answer4check || sondage.answer1check && sondage.answer3check || sondage.answer1check && sondage.answer4check || sondage.answer2check && sondage.answer4check || sondage.answer2check && sondage.answer3check)
+                {
+                    throw new Exception("Les choix multiples ne sont pas autorisés.");
+                }
+                else
+                {
+                    if (sondage.answer1check)
+                    {
+                        sondage.Counter_1 = sondage.Counter_1 + 1;
+                    }
 
-            if (sondage.answer3check)
-            {
-                sondage.Counter_3 = sondage.Counter_3 + 1;
-            }
+                    if (sondage.answer2check)
+                    {
+                        sondage.Counter_2 = sondage.Counter_2 + 1;
+                    }
 
-            if (sondage.answer4check)
-            {
-                sondage.Counter_4 = sondage.Counter_4 + 1;
+                    if (sondage.answer3check)
+                    {
+                        sondage.Counter_3 = sondage.Counter_3 + 1;
+                    }
+
+                    if (sondage.answer4check)
+                    {
+                        sondage.Counter_4 = sondage.Counter_4 + 1;
+                    }
+                }
             }
 
             if (ModelState.IsValid)

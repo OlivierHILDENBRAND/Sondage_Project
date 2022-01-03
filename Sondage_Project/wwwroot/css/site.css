@@ -67,10 +67,10 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1.5px solid black !important;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1.5px solid black !important;
 }
 
 .box-shadow {
@@ -89,9 +89,23 @@ html {
   min-height: 100%;
 }
 
+nav {
+    background-color: #DCDCDC;
+}
+
+nav #main-nav {
+    font-size : 30px;
+}
+
+.link-nav {
+    font-size: 20px;
+}
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Goudy Bookletter 1911', serif;
+    background-color: #FFF9C4;
 }
 .footer {
   position: absolute;
@@ -99,4 +113,17 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+/* View Home
+-------------------------------------------------- */
+
+#main-title-home {
+    margin-top: 5%;
+    font-size: 70px;
+}
+
+#main-text-home {
+    margin-top : 6%;
+    font-size : 25px;
 }

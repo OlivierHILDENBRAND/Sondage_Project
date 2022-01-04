@@ -1,4 +1,5 @@
 ﻿@model Sondage_Project.Data.Models.Sondage
+@using System.Linq
 
 @{
     ViewData["Title"] = "Answer";
@@ -33,21 +34,33 @@
                     <input class="form-check-input" asp-for="answer1check"/>@Model.Answer_1
                 </label>
                 </div>
-                <div class="form-group form-check">
-                <label class="form-check-label">
+                @if (!string.IsNullOrEmpty(@Model.Answer_2))
+                {
+                    <div class="form-group form-check">
+                    <label class="form-check-label">
                     <input class="form-check-input" asp-for="answer2check"/>@Model.Answer_2
-                </label>
-                </div>
-                <div class="form-group form-check">
-                <label class="form-check-label">
+                    </label>
+                    </div>
+                }
+                
+                @if (!string.IsNullOrEmpty(@Model.Answer_3))
+                {
+                    <div class="form-group form-check">
+                    <label class="form-check-label">
                     <input class="form-check-input" asp-for="answer3check"/>@Model.Answer_3
-                </label>
-                </div>
-                <div class="form-group form-check">
-                <label class="form-check-label">
+                    </label>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(@Model.Answer_4))
+                {
+                    <div class="form-group form-check">
+                    <label class="form-check-label">
                     <input class="form-check-input" asp-for="answer4check"/>@Model.Answer_4
-                </label>
-                </div>
+                    </label>
+                    </div>
+                }
+                
             </div>
                 <div class="form-group">
                 <input type="submit" value="Enregistrer" class="btn btn-primary" />

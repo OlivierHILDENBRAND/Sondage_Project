@@ -5,28 +5,25 @@
     ViewData["Link"] = "https://localhost:44325";
 }
 
-<h1>Manuel d'utilisation</h1>
+<h1 id="main-title-manual">Manuel d'utilisation</h1>
 
+<div class = "container-fluid manual">
 <div class ="row">
-    <div class = "container-fluid">
-        <div class = "col-xl-4">
-            <p>ATTENTION : ce lien est à conserver précieusement. Si vous quitter cette page, vous ny aurez plus accès par la suite. <br />
-                Cliquer sur ce lien va entrainer la cloture du sondage. Il sera donc impossible d'y participer par la suite.<br />
-                </p>
-            <p>Cloture du sondage :</p>
+        <div class = "col-4">
+            <p>Attention, ce lien est à conserver avec prudence. Si vous quittez cette page, vous ne pourrez plus y revenir. Cliquer sur ce lien va entrainer la cloture du sondage et il ne sera plus possible d’y participer.<br /></p>
             <a asp-action="DisableLinks" asp-route-id="@Model.SondageId">Cloture</a>
         </div>
         
         @if (@Model.IsActivated)
         {
-            <div class = "col-xl-4">
-            <p>Pour que les gens accèdent le plus facilement possible au sondage, il est conseillé de partager ce lien par mail.</p>
-            <p>Accéder a la page de vote : </p>
-            <a asp-action="Answer" asp-route-id="@Model.SondageId">Vote</a> <p>Lien du vote : @ViewData["Link"]@this.Url.Action("Answer", "Sondages")/@Model.SondageId</p>
+            <div class = "col-4">
+            <p>Pour assurer un accès simple au sondage, vous pourrez envoyer le lien suivant à des amis via un email. Cliquer sur ce lien pour participer au sondage</p>
+            <p>Lien du vote : @ViewData["Link"]@this.Url.Action("Answer", "Sondages")/@Model.SondageId</p>
+            <a asp-action="Answer" asp-route-id="@Model.SondageId">Vote</a> 
             </div>
         }
             
-        <div class = "col-xl-4">
+        <div class = "col-4">
             <p>Cliquer sur ce lien pour accéder au résultats du sondage : </p>
             <a asp-action="Details" asp-route-id="@Model.SondageId">Résultat</a>
         </div>

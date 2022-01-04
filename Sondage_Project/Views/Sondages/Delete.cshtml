@@ -4,12 +4,10 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Suppression</h1>
 
 <h3>Etes-vous sure de vouloir supprimer ce sondage?</h3>
 <div>
-    <h4>Sondage</h4>
-    <hr />
 <div>
     <hr />
     <dl class="row">
@@ -25,24 +23,35 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Answer_1) | Nombre de votes : (@Html.DisplayFor(model => model.Counter_1))
         </dd>
-        <dt class = "col-sm-2">
+        @if (!string.IsNullOrEmpty(@Model.Answer_2))
+        {
+            <dt class = "col-sm-2">
             Réponse 2 :
-        </dt>
-        <dd class = "col-sm-10">
+            </dt>
+            <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Answer_2) | Nombre de votes : (@Html.DisplayFor(model => model.Counter_2))
-        </dd>
-        <dt class = "col-sm-2">
+            </dd>
+        }
+
+        @if (!string.IsNullOrEmpty(@Model.Answer_3))
+        {
+            <dt class = "col-sm-2">
             Réponse 3 :
-        </dt>
-        <dd class = "col-sm-10">
+            </dt>
+            <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Answer_3) | Nombre de votes : (@Html.DisplayFor(model => model.Counter_3))
-        </dd>
-        <dt class = "col-sm-2">
+            </dd>
+        }
+
+        @if (!string.IsNullOrEmpty(@Model.Answer_4))
+        {
+            <dt class = "col-sm-2">
             Réponse 4 :
-        </dt>
-        <dd class = "col-sm-10">
+            </dt>
+            <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Answer_4) | Nombre de votes : (@Html.DisplayFor(model => model.Counter_4))
-        </dd>
+            </dd>
+        }
         </dl>
 </div>
     

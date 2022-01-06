@@ -9,7 +9,7 @@ using Sondage_Project.Data;
 namespace Sondage_Project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220106095844_UpdateEmail")]
+    [Migration("20220106123948_UpdateEmail")]
     partial class UpdateEmail
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

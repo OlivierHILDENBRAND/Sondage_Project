@@ -29,10 +29,10 @@ namespace Sondage_Project.Controllers
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp-relay.gmail.com";
+                smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new System.Net.NetworkCredential("jurqau@gmail.com", "HEiaiego20*-"); // Enter seders User name and password       
+                smtp.Credentials = new System.Net.NetworkCredential("sondage.projet.cci@gmail.com", "sondage.projet.cci*68"); // Enter seders User name and password       
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
                 return View("Index", _objModelMail);

@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿let count = 1;
+$(document).ready(function () {
+    $(".answer").hide();
+});
 
-// Write your JavaScript code.
+$("#add_answer").click(function () {
+    count = count + 1;
+    if (count == 2) {
+        $("#answer2").show();
+    }
+    else if (count == 3) {
+        $("#answer3").show();
+    }
+    else if (count == 4) {
+        $("#answer4").show();
+        $("#add_answer").hide();
+    }
+
+});

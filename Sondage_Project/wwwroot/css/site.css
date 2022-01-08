@@ -2,23 +2,32 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 .authli {
-    padding-left : 72%;
+    padding-left : 70%;
+}
+
+@media (min-width: 1199.98px) and (max-width: 1550px) {
+    .authli {
+        padding-left: 50%;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .authli {
-        padding-left: 60%;
+        padding-left: 42%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .authli {
-        padding-left: 40%;
+        padding-left: 18%;
     }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
     .authli {
-        padding-left: 20%;
+        padding-left: unset;
+    }
+    #main-nav {
+        visibility :hidden;
     }
 }
 

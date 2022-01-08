@@ -6,12 +6,9 @@ $(document).ready(function () {
 $("#add_answer").click(function () {
     count = count + 1;
     if (count == 2) {
-        $("#answer2").show();
-    }
-    else if (count == 3) {
         $("#answer3").show();
     }
-    else if (count == 4) {
+    else if (count == 3) {
         $("#answer4").show();
         $("#add_answer").hide();
     }

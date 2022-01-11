@@ -9,8 +9,8 @@ using Sondage_Project.Data;
 namespace Sondage_Project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220106123948_UpdateEmail")]
-    partial class UpdateEmail
+    [Migration("20220111131636_UpdateSondageDb")]
+    partial class UpdateSondageDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,6 +33,7 @@ namespace Sondage_Project.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Answer_2")
+                        .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
 

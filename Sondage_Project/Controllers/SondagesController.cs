@@ -23,6 +23,8 @@ namespace Sondage_Project.Controllers
         }
 
         // GET: Sondages
+        // Return the Index view of the Sondages Views folder
+        // It is the list of all sondages that have been created
         public async Task<IActionResult> Index()
         {
             return View(await _context.Sondages.ToListAsync());

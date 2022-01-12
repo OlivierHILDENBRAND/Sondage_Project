@@ -1,25 +1,23 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Sondage_Project.Data.Models;
+using Sondage_Project.Models;
 using System.Net.Mail;
-using System.Web;
 
 namespace Sondage_Project.Controllers
 {
     [Authorize]
     public class EmailController : Controller
     {
-        // GET: SendMailerController
+        // GET: SendMailer : return the Index View of the Email
         public ActionResult Index()
         {
             return View();
         }
 
+        // We create a smtp client using gmail and the port num 25 to send the MailMessagge named mail
         [HttpPost]
-        public ViewResult Index(Sondage_Project.Data.Models.MailModel _objModelMail)
+        public ViewResult Index(MailModel _objModelMail)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +30,7 @@ namespace Sondage_Project.Controllers
                 mail.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
+                smtp.Port = 25;
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new System.Net.NetworkCredential("sondage.projet.cci@gmail.com", "sondage.projet.cci*68"); // Enter seders User name and password       
                 smtp.EnableSsl = true;

@@ -14,16 +14,19 @@ namespace Sondage_Project.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
+        // This method will return the Index view of the Home folder when nothing is done
         public IActionResult Index()
         {
             return View();
         }
 
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

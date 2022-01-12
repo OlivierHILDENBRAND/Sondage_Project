@@ -29,6 +29,9 @@ namespace Sondage_Project.Controllers
         }
 
         // GET: Sondages/Details/5
+        // This method will return the Details view of the Sondages view folder
+        // This view contains the results of the sondage
+        // If the id of the sondage is not found, it will return nothing
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -69,6 +72,7 @@ namespace Sondage_Project.Controllers
         }
 
         // GET : Manual/Id
+        // This method return the Manual view of the Sondage Views folder
         public async Task <IActionResult> Manual(int? id)
         {
 
@@ -88,6 +92,8 @@ namespace Sondage_Project.Controllers
             return View(sondage);
         }
 
+        // This method is use to delete the Vote button of the Index View of the Sondages
+        // We give to the IsActivated checkbox of the sondage the value false
         public async Task <IActionResult> DisableLinks(int ?id)
         {
             if (id == null)
@@ -126,6 +132,8 @@ namespace Sondage_Project.Controllers
         }
 
         // GET: Sondages/Answer/5
+        // This method return the Answer view of the Sondage
+        // As no answer has been selected, all answer checkbox are false
         public async Task<IActionResult> Answer(int? id)
         {
 
@@ -248,6 +256,7 @@ namespace Sondage_Project.Controllers
         }
 
         // GET: Sondages/Delete/5
+        // This method return the delete view of the Sondage Views folder
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -266,6 +275,7 @@ namespace Sondage_Project.Controllers
         }
 
         // POST: Sondages/Delete/5
+        // If the button of the Delete view is clicked on, the sondage will be deleted
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
